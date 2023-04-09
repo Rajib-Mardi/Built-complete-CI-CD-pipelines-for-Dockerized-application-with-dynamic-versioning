@@ -7,7 +7,7 @@
 
 Project Description:
 
-Configure CI step:Increment patch version
+### Configure CI step:Increment patch version
 
   * Increment version locally with maven build tool
   
