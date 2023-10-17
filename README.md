@@ -49,10 +49,12 @@ Project Description:
 
 
      * Push Image to private DockerHub repository
+       
 
-    
+   ![rajibmardi_my-repo Tags _ Docker Hub - Brave 17-10-2023 17_45_12](https://github.com/Rajib-Mardi/Dynamically-Increment-Application-version-in-Jenkins-Pipeline/assets/96679708/0a751a37-4c37-4902-8205-12c3de71af08)
+
      
-     ![Screenshot 2023-04-08 173822](https://user-images.githubusercontent.com/96679708/230753049-943c73be-9475-4d09-8642-84d9ed2f6ae6.png)
+   
 
      
 
