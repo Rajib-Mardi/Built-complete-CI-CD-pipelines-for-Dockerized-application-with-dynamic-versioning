@@ -59,9 +59,9 @@ Project Description:
      
 
 
-     Executed Jenkins Pipeline
+  *  Executed Jenkins Pipeline
 
-     * build the jenkins-jobs pipline
+  *  build the jenkins-jobs pipline
  
  ![Screenshot 2023-04-08 173822](https://user-images.githubusercontent.com/96679708/230753069-b0fd735a-3ed7-45f2-80e0-00f9fe3410f5.png)
 
@@ -93,7 +93,7 @@ Project Description:
  * it will trigger automatically again and after commit happens ,a new pipeline should not triggered.
 
 
- *image* 
+
  
  ![Screenshot 2023-04-08 220722](https://user-images.githubusercontent.com/96679708/230757879-09ae27ce-88d2-48d1-a0fa-6c6fc2a4e36c.png)
 
