@@ -6,8 +6,8 @@
 
 
 ### Project Description:
- * Software versioning is done in  three parts - major, minor and patch version  , in this project we will dynamically increment the version using jenkins as CI/CD automaticatty (jenkinsfile) in the stage as increment part  as part of code
- * In this project we 
+ * Software versioning consists of three parts: major, minor, and patch versions. In this project, we will use Jenkins as a CI/CD to automatically increment the version (jenkinsfile) in the stage as part of the code.
+
 ### Configure CI step:Increment patch version
 
  * Increment version locally with maven build tool
