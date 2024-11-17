@@ -6,7 +6,7 @@
 
 
 ### Project Description:
- * Software versioning is done in  three parts - major, minor and patch version  , in this project we will dynamically increment the version using jenkinsfile as part of code
+ * Software versioning is done in  three parts - major, minor and patch version  , in this project we will dynamically increment the version using jenkins as CI/CD automaticatty (jenkinsfile) as part of code
  * In this project we 
 ### Configure CI step:Increment patch version
 
