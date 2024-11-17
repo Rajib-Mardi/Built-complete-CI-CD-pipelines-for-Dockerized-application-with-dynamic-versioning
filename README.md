@@ -35,12 +35,13 @@
 
 
 * Intergrate this ```Increment version``` → ```build app``` → ```Build image``` →  ```Push to  docker repository``` step of setting a new version  in pom.xml file into jenkins file so it's a part of build  pipeline 
-  * Increment version in Jenkins Pipeline
 
-    * Configured Jenkinsfile to increment version
-      * stage  :increment version
-      * increment  patch version in pom.xml
-      * read new version from pom.xml
+* We need to Increment the version before application build so that we get jar file with correct incremented version
+  
+* Configured the Jenkins file to increment the version. 
+* stage: increment version
+* increment patch version in pom.xml
+* Read the new version from pom.xml.
 
 
    
@@ -53,15 +54,17 @@
 
    * Build Java application and clean old artifacts
 
-      * ```maven clean package``` jenkins server will clean the target directory from the old build   and build the neew application jar 
+      * ```maven clean package``` jenkins server will clean the target directory from the old build   and build the new application jar 
 
+
+#### Configure CI step: Build Image with dynamic Docker Image Tag
+* everytime we are  releasing the new version , we are  not  actually releasing  jarfile but rather a docker image 
      * Adjusted Dockerfile file 
 
-       *  Build docker  with dynamic Docker Image Tag
-        * build docker image from dockerfile
+ * Build a Docker image tag with dynamic images and use the application version for the Docker image version.
+*  Image name will be dynamic  weneed to set it everytime we run a build pipeline 
         * tag image with repository URL  and name 
-        
-        
+* To access the value or variable of ```IMAGE_NAME```  by reading it from the pom.xml
         
      ![java-maven-app – Jenkinsfile 08-04-2023 14_17_55](https://user-images.githubusercontent.com/96679708/230753093-7d991eb3-8a05-4d7b-8adb-60964263ad6d.png)
 
