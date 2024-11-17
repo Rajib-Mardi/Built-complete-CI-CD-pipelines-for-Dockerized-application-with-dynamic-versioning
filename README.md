@@ -14,11 +14,11 @@
   *  just we increment the patch version and keeps the major and minor version
 
 #### command : 
-1 .```mvn build-helper:parse-version versions:set```:
+ 1 .```mvn build-helper:parse-version versions:set```:
   * ```build-helper:parse-version```: This goal parses the current project version to extract major, minor, and incremental version components (e.g., ```1.2.3``` → ```major=1```, ```minor=2```, ```incremental=3```).  
  * ```versions:set```: This goal sets a new version for the project in the ```pom.xml``` file.
    
-2. ``` DnewVersion=${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}```:
+ 2. ```DnewVersion=${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}```:
   * This defines the new version to be set using the parsed components. ```${parsedVersion.majorVersion}```, ```${parsedVersion.minorVersion}```, and ```${parsedVersion.nextIncrementalVersion}``` are placeholders that will be replaced with actual values (e.g., ```1.2.4```).
     
 3. ```versions:commit:```
