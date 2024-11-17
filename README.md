@@ -10,7 +10,7 @@
  * In this project we 
 ### Configure CI step:Increment patch version
 
-  * Increment version locally with maven build tool
+  * Increment version locally with maven build tool in the terminal
 
 
   
