@@ -8,7 +8,7 @@
 ### Project Description:
  * Software versioning consists of three parts: major, minor, and patch versions. In this project, we will use Jenkins as a CI/CD to automatically increment the version (jenkinsfile) in the stage as part of the code.
 
-### Configure CI step:Increment patch version
+
 
  * Increment version locally with maven build tool
   *  just we increment the patch version and keeps the major and minor version
@@ -29,7 +29,12 @@
   ![MINGW64__c_Users_Rajib_java-maven-app 08-04-2023 13_35_16](https://user-images.githubusercontent.com/96679708/230752916-c63e6e37-013a-4ba2-b1d3-79b7b21f7591.png)
 
 
+### Configure CI step:Increment patch version as CI/CD pipeline 
 
+![16 - Dynamically Increment Application version in Jenkins Pipeline - - Brave 18-11-2024 01_47_25](https://github.com/user-attachments/assets/82e91a73-38ae-4ff6-b364-1d23b24f7ea8)
+
+
+* Intergrate this ```Increment version``` → ```build app``` → ```Build image``` →  ```Push to  docker repository``` step of setting a new version  in pom.xml file into jenkins file so it's a part of build  pipeline 
   * Increment version in Jenkins Pipeline
 
     * Configured Jenkinsfile to increment version
