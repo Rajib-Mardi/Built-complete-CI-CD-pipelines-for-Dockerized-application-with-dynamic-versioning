@@ -1,16 +1,17 @@
-## Demo Project: 
+### Project: 
 * Dynamically Increment Application version in Jenkins Pipeline
 
 ## Technologiesused: 
 * Jenkins, Docker, GitLab, Git, Java, Maven 
 
 
-Project Description:
-
+### Project Description:
+ * Software versioning is done in  three parts - major, minor and patch version
+ * In this project we 
 ### Configure CI step:Increment patch version
 
   * Increment version locally with maven build tool
-  
+
 
   
   ![MINGW64__c_Users_Rajib_java-maven-app 08-04-2023 13_35_16](https://user-images.githubusercontent.com/96679708/230752916-c63e6e37-013a-4ba2-b1d3-79b7b21f7591.png)
