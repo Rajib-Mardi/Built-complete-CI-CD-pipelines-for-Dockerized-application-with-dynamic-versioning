@@ -13,6 +13,7 @@
  * Increment version locally with maven build tool
   *  just we increment the patch version and keeps the major and minor version
 
+#### command
 1 .```mvn build-helper:parse-version versions:set```:
   * ```build-helper:parse-version```: This goal parses the current project version to extract major, minor, and incremental version components (e.g., ```1.2.3``` → ```major=1```, ```minor=2```, ```incremental=3```).  
  * ```versions:set```: This goal sets a new version for the project in the ```pom.xml``` file.
