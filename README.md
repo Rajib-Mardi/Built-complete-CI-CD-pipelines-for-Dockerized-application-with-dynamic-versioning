@@ -10,8 +10,19 @@
  * In this project we 
 ### Configure CI step:Increment patch version
 
-  * Increment version locally with maven build tool in the terminal
+ * Increment version locally with maven build tool
+  *  just we increment the patch version and keeps the major and minor version
 
+1 .```mvn build-helper:parse-version versions:set```:
+  * ```build-helper:parse-version```: This goal parses the current project version to extract major, minor, and incremental version components (e.g., ```1.2.3``` → ```major=1```, ```minor=2```, ```incremental=3```).  
+ * ```versions:set```: This goal sets a new version for the project in the ```pom.xml``` file.
+   
+2. ``` DnewVersion=${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}```:
+  * This defines the new version to be set using the parsed components. ```${parsedVersion.majorVersion}```, ```${parsedVersion.minorVersion}```, and ```${parsedVersion.nextIncrementalVersion}``` are placeholders that will be replaced with actual values (e.g., ```1.2.4```).
+    
+3. ```versions:commit:```
+  * This commits the version change to the ```pom.xml``` file.
+   
 
   
   ![MINGW64__c_Users_Rajib_java-maven-app 08-04-2023 13_35_16](https://user-images.githubusercontent.com/96679708/230752916-c63e6e37-013a-4ba2-b1d3-79b7b21f7591.png)
