@@ -14,15 +14,15 @@
   *  just we increment the patch version and keeps the major and minor version
 
 #### command for increment version: 
- 1 .```mvn build-helper:parse-version versions:set```:
-  * ```build-helper:parse-version```: This goal parses the current project version to extract major, minor, and incremental version components (e.g., ```1.2.3``` → ```major=1```, ```minor=2```, ```incremental=3```).  
- * ```versions:set```: This goal sets a new version for the project in the ```pom.xml``` file.
+  1 .```mvn build-helper:parse-version versions:set```:
+   * ```build-helper:parse-version```: This goal parses the current project version to extract major, minor, and incremental version components (e.g., ```1.2.3``` → ```major=1```, ```minor=2```, ```incremental=3```).  
+   * ```versions:set```: This goal sets a new version for the project in the ```pom.xml``` file.
    
  2. ```DnewVersion=${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}```:
-  * This defines the new version to be set using the parsed components. ```${parsedVersion.majorVersion}```, ```${parsedVersion.minorVersion}```, and ```${parsedVersion.nextIncrementalVersion}``` are placeholders that will be replaced with actual values (e.g., ```1.2.4```).
+   * This defines the new version to be set using the parsed components. ```${parsedVersion.majorVersion}```, ```${parsedVersion.minorVersion}```, and ```${parsedVersion.nextIncrementalVersion}``` are placeholders that will be replaced with actual values (e.g., ```1.2.4```).
     
 3. ```versions:commit:```
-  * This commits the version change to the ```pom.xml``` file.
+   * This commits the version change to the ```pom.xml``` file.
    
 
   
@@ -41,10 +41,10 @@
 * Configured the Jenkins file to increment the version. 
 
 * This script extracts the version number from a ```pom.xml``` file and uses it to create a Docker image name.
-*   ```readFile('pom.xml')```: Reads the content of the pom.xml file.
-* ```=~ '<version>(.+)</version>'```: Applies a regular expression to match the version tag in the pom.xml file and capture the version number.
-* ```matcher[0][1]```: Accesses the first match and gets the captured version number.
-* ```env.IMAGE_NAME = "$version-$BUILD_NUMBER"```:Sets the environment variable ```IMAGE_NAME``` by combining the extracted version number (version) with the build number (BUILD_NUMBER), separated by a hyphen.
+   *   ```readFile('pom.xml')```: Reads the content of the pom.xml file.
+   * ```=~ '<version>(.+)</version>'```: Applies a regular expression to match the version tag in the pom.xml file and capture the version number.
+   * ```matcher[0][1]```: Accesses the first match and gets the captured version number.
+   * ```env.IMAGE_NAME = "$version-$BUILD_NUMBER"```:Sets the environment variable ```IMAGE_NAME``` by combining the extracted version number (version) with the build number (BUILD_NUMBER), separated by a hyphen.
 
 
    
@@ -62,32 +62,32 @@
 
 #### Configure CI step: Build Image with dynamic Docker Image Tag
 * Every time we are releasing the new version, we are not actually releasing a jar file but rather a Docker image.
+
 * Adjusted Dockerfile file by changing the hardcoded version and replacing it with regular expression
+
 * Build a Docker image tag with dynamic images and use the application version for the Docker image version.
+
 * The image name will be dynamic; we need to set it every time we run a build pipeline. 
-        * tag image with repository URL  and name 
-* To access the value or variable of ```IMAGE_NAME```  by reading it from the pom.xml
+
+* To access the value or variable of ```IMAGE_NAME```  by reading it from the ```pom.xml``` file
         
      ![java-maven-app – Jenkinsfile 08-04-2023 14_17_55](https://user-images.githubusercontent.com/96679708/230753093-7d991eb3-8a05-4d7b-8adb-60964263ad6d.png)
 
 
-     * Push Image to private DockerHub repository
-       
-
-   ![rajibmardi_my-repo Tags _ Docker Hub - Brave 17-10-2023 17_45_12](https://github.com/Rajib-Mardi/Dynamically-Increment-Application-version-in-Jenkins-Pipeline/assets/96679708/0a751a37-4c37-4902-8205-12c3de71af08)
-
-     
-   
-
-     
 
 
   *  Executed Jenkins Pipeline
 
-  *  build the jenkins-jobs pipline
  
  ![Screenshot 2023-04-08 173822](https://user-images.githubusercontent.com/96679708/230753069-b0fd735a-3ed7-45f2-80e0-00f9fe3410f5.png)
+   
+#### Configure CI step: Push Image to private DockerHub repository 
 
+  * Push Image to private DockerHub repository  
+
+   ![rajibmardi_my-repo Tags _ Docker Hub - Brave 17-10-2023 17_45_12](https://github.com/Rajib-Mardi/Dynamically-Increment-Application-version-in-Jenkins-Pipeline/assets/96679708/0a751a37-4c37-4902-8205-12c3de71af08)
+
+     
    
  ### Configure Jenkins pipeline to not trigger automatically on CI build commit to avoid commit loop
 
