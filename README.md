@@ -93,7 +93,8 @@
 
   * This  stage updates the GitLab repository (```java-maven-app.git```) with changes, committing them with a message and pushing to the ```jenkins-jobs``` branch. Credentials are securely provided via Jenkins credentials.
 
-   ![Screenshot 2024-11-18 115108](https://github.com/user-attachments/assets/a07c4793-1c74-45c1-ab77-03f9af14a872)
+  
+![Screenshot 2024-11-18 115853](https://github.com/user-attachments/assets/78d96df6-ef36-4f89-ad01-79ef166c32d3)
 
  ### Configure Jenkins pipeline to not trigger automatically on CI build commit to avoid commit loop
 
