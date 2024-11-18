@@ -52,6 +52,12 @@ pipeline {
                     steps {
                         script {
                             withCredentials([usernamePassword(credentialsId: 'gitlab-token', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                                sh 'git config --global user.email "jenkins@example.com"'
+                                sh 'git config --global user.name "jenkins"'
+
+                                sh 'git status'
+                                sh 'git branch'
+                                sh 'git config --list'
                                 sh "git remote set-url origin https://${USER}:${PASS}@gitlab.com/Rajib-Mardi/java-maven-app.git"
                                 sh 'git add .'
                                 sh 'git commit -m "ci:jenkins-jobs"'
