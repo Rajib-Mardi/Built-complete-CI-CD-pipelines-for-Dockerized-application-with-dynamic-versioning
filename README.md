@@ -1,7 +1,7 @@
 ### Project: 
 * Dynamically Increment Application version in Jenkins Pipeline
 
-## Technologiesused: 
+### Technologiesused: 
 * Jenkins, Docker, GitLab, Git, Java, Maven 
 
 
@@ -29,7 +29,7 @@
   ![MINGW64__c_Users_Rajib_java-maven-app 08-04-2023 13_35_16](https://user-images.githubusercontent.com/96679708/230752916-c63e6e37-013a-4ba2-b1d3-79b7b21f7591.png)
 
 
-### Configure CI step:Increment patch version as CI/CD pipeline 
+#### Configure CI step:Increment patch version as CI/CD pipeline 
 
 ![16 - Dynamically Increment Application version in Jenkins Pipeline - - Brave 18-11-2024 01_47_25](https://github.com/user-attachments/assets/82e91a73-38ae-4ff6-b364-1d23b24f7ea8)
 
@@ -39,8 +39,6 @@
 * We need to Increment the version before application build so that we get jar file with correct incremented version
   
 * Configured the Jenkins file to increment the version. 
-* stage: increment version
-* increment patch version in pom.xml
 
 * This script extracts the version number from a ```pom.xml``` file and uses it to create a Docker image name.
 *   ```readFile('pom.xml')```: Reads the content of the pom.xml file.
@@ -54,20 +52,19 @@
 
     
     
-    
-    
+
+  ####   Configure CI step: Build Java application and clean old artifacts
 
    * Build Java application and clean old artifacts
 
-      * ```maven clean package``` jenkins server will clean the target directory from the old build   and build the new application jar 
+   * ```maven clean package``` jenkins server will clean the target directory from the old build   and build the new application jar 
 
 
 #### Configure CI step: Build Image with dynamic Docker Image Tag
-* everytime we are  releasing the new version , we are  not  actually releasing  jarfile but rather a docker image 
-     * Adjusted Dockerfile file 
-
- * Build a Docker image tag with dynamic images and use the application version for the Docker image version.
-*  Image name will be dynamic  weneed to set it everytime we run a build pipeline 
+* Every time we are releasing the new version, we are not actually releasing a jar file but rather a Docker image.
+* Adjusted Dockerfile file by changing the hardcoded version and replacing it with regular expression
+* Build a Docker image tag with dynamic images and use the application version for the Docker image version.
+* The image name will be dynamic; we need to set it every time we run a build pipeline. 
         * tag image with repository URL  and name 
 * To access the value or variable of ```IMAGE_NAME```  by reading it from the pom.xml
         
