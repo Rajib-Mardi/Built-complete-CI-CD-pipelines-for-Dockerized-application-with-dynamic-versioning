@@ -43,6 +43,11 @@
 * increment patch version in pom.xml
 * Read the new version from pom.xml.
 
+*   ```readFile('pom.xml')```: Reads the content of the pom.xml file.
+* ```=~ '<version>(.+)</version>'```: Applies a regular expression to match the version tag in the pom.xml file and capture the version number.
+* ```matcher[0][1]```: Accesses the first match and gets the captured version number.
+* ```env.IMAGE_NAME = "$version-$BUILD_NUMBER"```: Sets the ```IMAGE_NAME``` environment variable to the format version-BUILD_NUMBER, where ```BUILD_NUMBER``` is presumably a Jenkins build number.
+
 
    
     ![java-maven-app – Jenkinsfile 08-04-2023 14_11_05](https://user-images.githubusercontent.com/96679708/230752979-8bfa6e02-a45c-429a-9e2f-7312550d42bf.png)
