@@ -91,7 +91,7 @@
 
 ####  Configure CI step: Commit version update of Jenkins back to Git repository
 
-  * This  stage updates the GitLab repository (```java-maven-app.git```) with changes, committing them with a message and pushing to the ```jenkins-jobs``` branch. Credentials are securely provided via Jenkins credentials.
+  * This stage configures Git (with user details), checks the current repository status, and securely commits and pushes changes to the ```jenkins-jobs``` branch on GitLab, using credentials stored in Jenkins. The commit is made with the message ```"ci:jenkins-jobs"```.
 
   
 ![Screenshot 2024-11-18 115853](https://github.com/user-attachments/assets/78d96df6-ef36-4f89-ad01-79ef166c32d3)
