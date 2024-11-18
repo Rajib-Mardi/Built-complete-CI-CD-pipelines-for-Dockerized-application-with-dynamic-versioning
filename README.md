@@ -96,33 +96,36 @@
   
 ![Screenshot 2024-11-18 115853](https://github.com/user-attachments/assets/78d96df6-ef36-4f89-ad01-79ef166c32d3)
 
-#### Configure CI step: Commit version update of Jenkins back to Git repository
- 
- ### Configure Jenkins pipeline to not trigger automatically on CI build commit to avoid commit loop
+* Exectued the jenkins pipeline
+
+ ![Screenshot 2023-04-08 220722](https://user-images.githubusercontent.com/96679708/230757879-09ae27ce-88d2-48d1-a0fa-6c6fc2a4e36c.png)
 
 
 
- * when we trigger automatically with webhook it Increment the commit version in git , it will automatically trigger again and again and this will continue to go and on in loop because of the commit trigger.
+ #### Configure Jenkins pipeline to not trigger automatically on CI build commit to avoid commit loop
+
+
+
+ * When we trigger it automatically with Webhook, it increments the commit version in git. It will automatically trigger again and again, and this will continue to go on and on in loop because of the commit trigger.
 
 
  * Detect that commit was made from jenkins 
- * Ignore the trigger when commit is from jenkins using the plugin "ignore committer  Strategy"
 
-
+* Ignore the trigger when the commit is from Jenkins using the plugin "ignore committer strategy."
  
  
  ![Installed plugins - Plugin Manager  Jenkins  - Google Chrome 09-04-2023 11_44_54](https://user-images.githubusercontent.com/96679708/230757766-b2e9316b-e9a6-4ce1-9fc0-63851358d259.png)
 
  
 
- * In configuration add the plugin provide the author email for jenkins user and allow the ignore author and save it.
+ * In configuration, add the plugin, provide the author email for Jenkins users, and allow them to ignore the author and save it.
 
 ![Screenshot 2023-04-08 215211](https://user-images.githubusercontent.com/96679708/230757827-4fc6e009-391b-4b2f-a383-a754d8fbf6ed.png)
 
 
 
- * make some change in jenkinsfile and push it to the repository 
- * it will trigger automatically again and after commit happens ,a new pipeline should not triggered.
+* Make some changes in the git file and push it to the repository. 
+* It will trigger automatically again, and after a commit happens, a new pipeline should not be triggered.
 
 
 
