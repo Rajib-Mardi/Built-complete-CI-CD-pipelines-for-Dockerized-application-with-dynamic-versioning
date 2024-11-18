@@ -96,6 +96,8 @@
   
 ![Screenshot 2024-11-18 115853](https://github.com/user-attachments/assets/78d96df6-ef36-4f89-ad01-79ef166c32d3)
 
+#### Configure CI step: Commit version update of Jenkins back to Git repository
+ 
  ### Configure Jenkins pipeline to not trigger automatically on CI build commit to avoid commit loop
 
 
