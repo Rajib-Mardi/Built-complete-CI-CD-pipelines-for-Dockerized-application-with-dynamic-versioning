@@ -90,7 +90,11 @@
 
 
 ####  Configure CI step: Commit version update of Jenkins back to Git repository
-   
+
+  * This  stage updates the GitLab repository (```java-maven-app.git```) with changes, committing them with a message and pushing to the ```jenkins-jobs``` branch. Credentials are securely provided via Jenkins credentials.
+
+   ![Screenshot 2024-11-18 115108](https://github.com/user-attachments/assets/a07c4793-1c74-45c1-ab77-03f9af14a872)
+
  ### Configure Jenkins pipeline to not trigger automatically on CI build commit to avoid commit loop
 
 
