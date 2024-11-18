@@ -41,12 +41,12 @@
 * Configured the Jenkins file to increment the version. 
 * stage: increment version
 * increment patch version in pom.xml
-* Read the new version from pom.xml.
 
+* This script extracts the version number from a ```pom.xml``` file and uses it to create a Docker image name.
 *   ```readFile('pom.xml')```: Reads the content of the pom.xml file.
 * ```=~ '<version>(.+)</version>'```: Applies a regular expression to match the version tag in the pom.xml file and capture the version number.
 * ```matcher[0][1]```: Accesses the first match and gets the captured version number.
-* ```env.IMAGE_NAME = "$version-$BUILD_NUMBER"```: Sets the ```IMAGE_NAME``` environment variable to the format version-BUILD_NUMBER, where ```BUILD_NUMBER``` is presumably a Jenkins build number.
+* ```env.IMAGE_NAME = "$version-$BUILD_NUMBER"```:Sets the environment variable ```IMAGE_NAME``` by combining the extracted version number (version) with the build number (BUILD_NUMBER), separated by a hyphen.
 
 
    
