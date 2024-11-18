@@ -87,7 +87,9 @@
 
    ![rajibmardi_my-repo Tags _ Docker Hub - Brave 17-10-2023 17_45_12](https://github.com/Rajib-Mardi/Dynamically-Increment-Application-version-in-Jenkins-Pipeline/assets/96679708/0a751a37-4c37-4902-8205-12c3de71af08)
 
-     
+
+
+####  Configure CI step: Commit version update of Jenkins back to Git repository
    
  ### Configure Jenkins pipeline to not trigger automatically on CI build commit to avoid commit loop
 
