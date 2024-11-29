@@ -26,12 +26,14 @@
    
 
   
-  ![MINGW64__c_Users_Rajib_java-maven-app 08-04-2023 13_35_16](https://user-images.githubusercontent.com/96679708/230752916-c63e6e37-013a-4ba2-b1d3-79b7b21f7591.png)
+  
 
+<img src="https://user-images.githubusercontent.com/96679708/230752916-c63e6e37-013a-4ba2-b1d3-79b7b21f7591.png" width="700">
 
 #### Configure CI step:Increment patch version as CI/CD pipeline 
 
-![16 - Dynamically Increment Application version in Jenkins Pipeline - - Brave 18-11-2024 01_47_25](https://github.com/user-attachments/assets/82e91a73-38ae-4ff6-b364-1d23b24f7ea8)
+
+<img src="https://github.com/user-attachments/assets/82e91a73-38ae-4ff6-b364-1d23b24f7ea8" width="700">
 
 
 * Intergrate this ```Increment version``` → ```build app``` → ```Build image``` →  ```Push to  docker repository``` step of setting a new version  in pom.xml file into jenkins file so it's a part of build  pipeline 
@@ -47,10 +49,8 @@
    * ```env.IMAGE_NAME = "$version-$BUILD_NUMBER"```:Sets the environment variable ```IMAGE_NAME``` by combining the extracted version number (version) with the build number (BUILD_NUMBER), separated by a hyphen.
 
 
-   
-    ![java-maven-app – Jenkinsfile 08-04-2023 14_11_05](https://user-images.githubusercontent.com/96679708/230752979-8bfa6e02-a45c-429a-9e2f-7312550d42bf.png)
-
-    
+   <img src="https://user-images.githubusercontent.com/96679708/230752979-8bfa6e02-a45c-429a-9e2f-7312550d42bf.png" width="700">
+ 
     
 
   ####   Configure CI step: Build Java application and clean old artifacts
@@ -71,22 +71,24 @@
 
 * To access the value or variable of ```IMAGE_NAME```  by reading it from the ```pom.xml``` file
         
-     ![java-maven-app – Jenkinsfile 08-04-2023 14_17_55](https://user-images.githubusercontent.com/96679708/230753093-7d991eb3-8a05-4d7b-8adb-60964263ad6d.png)
 
-
+  <img src="https://user-images.githubusercontent.com/96679708/230753093-7d991eb3-8a05-4d7b-8adb-60964263ad6d.png" width="700">
 
 
   *  Executed Jenkins Pipeline
 
  
- ![Screenshot 2023-04-08 173822](https://user-images.githubusercontent.com/96679708/230753069-b0fd735a-3ed7-45f2-80e0-00f9fe3410f5.png)
+
+<img src="https://user-images.githubusercontent.com/96679708/230753069-b0fd735a-3ed7-45f2-80e0-00f9fe3410f5.png" width="700">
+
    
 #### Configure CI step: Push Image to private DockerHub repository 
 
   * Push Image to private DockerHub repository  
 
-   ![rajibmardi_my-repo Tags _ Docker Hub - Brave 17-10-2023 17_45_12](https://github.com/Rajib-Mardi/Dynamically-Increment-Application-version-in-Jenkins-Pipeline/assets/96679708/0a751a37-4c37-4902-8205-12c3de71af08)
 
+
+<img src="https://github.com/Rajib-Mardi/Dynamically-Increment-Application-version-in-Jenkins-Pipeline/assets/96679708/0a751a37-4c37-4902-8205-12c3de71af08" width="700">
 
 
 ####  Configure CI step: Commit version update of Jenkins back to Git repository
@@ -94,12 +96,15 @@
   * This stage configures Git (with user details), checks the current repository status, and securely commits and pushes changes to the ```jenkins-jobs``` branch on GitLab, using credentials stored in Jenkins. The commit is made with the message ```"ci:jenkins-jobs"```.
 
   
-![Screenshot 2024-11-18 115853](https://github.com/user-attachments/assets/78d96df6-ef36-4f89-ad01-79ef166c32d3)
+
+<img src="https://github.com/user-attachments/assets/78d96df6-ef36-4f89-ad01-79ef166c32d3" width="700">
+
 
 * Exectued the jenkins pipeline
 
- ![Screenshot 2023-04-08 220722](https://user-images.githubusercontent.com/96679708/230757879-09ae27ce-88d2-48d1-a0fa-6c6fc2a4e36c.png)
 
+
+<img src="https://user-images.githubusercontent.com/96679708/230757879-09ae27ce-88d2-48d1-a0fa-6c6fc2a4e36c.png" width="700">
 
 
  #### Configure Jenkins pipeline to not trigger automatically on CI build commit to avoid commit loop
@@ -115,27 +120,28 @@
  
  
 
-![230757766-b2e9316b-e9a6-4ce1-9fc0-63851358d259](https://github.com/user-attachments/assets/abc5b945-a904-4a80-a0b4-8f45def64771)
+
+
+<img src="https://github.com/user-attachments/assets/abc5b945-a904-4a80-a0b4-8f45def64771" width="700">
 
  
 
  * In configuration, add the plugin, provide the author email for Jenkins users, and allow them to ignore the author and save it.
 
-![Screenshot 2023-04-08 215211](https://user-images.githubusercontent.com/96679708/230757827-4fc6e009-391b-4b2f-a383-a754d8fbf6ed.png)
 
+
+<img src="https://user-images.githubusercontent.com/96679708/230757827-4fc6e009-391b-4b2f-a383-a754d8fbf6ed.png" width="700">
 
 
 * Make some changes in the git file and push it to the repository. 
 * It will trigger automatically again, and after a commit happens, a new pipeline should not be triggered.
 
 
-
- 
- ![Screenshot 2023-04-08 220722](https://user-images.githubusercontent.com/96679708/230757879-09ae27ce-88d2-48d1-a0fa-6c6fc2a4e36c.png)
+<img src="https://user-images.githubusercontent.com/96679708/230757879-09ae27ce-88d2-48d1-a0fa-6c6fc2a4e36c.png" width="700">
 
 
- 
- ![Screenshot 2023-04-08 220912](https://user-images.githubusercontent.com/96679708/230757889-b9da0132-6076-4289-8359-5706332d4b30.png)
 
- 
+
+ <img src="https://user-images.githubusercontent.com/96679708/230757889-b9da0132-6076-4289-8359-5706332d4b30.png" width="700">
+
  
