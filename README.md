@@ -114,7 +114,8 @@
 * Ignore the trigger when the commit is from Jenkins using the plugin "ignore committer strategy."
  
  
- ![Installed plugins - Plugin Manager  Jenkins  - Google Chrome 09-04-2023 11_44_54](https://user-images.githubusercontent.com/96679708/230757766-b2e9316b-e9a6-4ce1-9fc0-63851358d259.png)
+
+![230757766-b2e9316b-e9a6-4ce1-9fc0-63851358d259](https://github.com/user-attachments/assets/abc5b945-a904-4a80-a0b4-8f45def64771)
 
  
 
