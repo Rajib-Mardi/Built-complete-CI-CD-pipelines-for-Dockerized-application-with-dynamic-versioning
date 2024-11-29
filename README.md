@@ -49,7 +49,7 @@
    * ```env.IMAGE_NAME = "$version-$BUILD_NUMBER"```:Sets the environment variable ```IMAGE_NAME``` by combining the extracted version number (version) with the build number (BUILD_NUMBER), separated by a hyphen.
 
 
-   <img src="https://user-images.githubusercontent.com/96679708/230752979-8bfa6e02-a45c-429a-9e2f-7312550d42bf.png" width="700">
+ <img src="https://user-images.githubusercontent.com/96679708/230752979-8bfa6e02-a45c-429a-9e2f-7312550d42bf.png" width="700">
  
     
 
@@ -71,8 +71,7 @@
 
 * To access the value or variable of ```IMAGE_NAME```  by reading it from the ```pom.xml``` file
         
-
-  <img src="https://user-images.githubusercontent.com/96679708/230753093-7d991eb3-8a05-4d7b-8adb-60964263ad6d.png" width="700">
+ <img src="https://user-images.githubusercontent.com/96679708/230753093-7d991eb3-8a05-4d7b-8adb-60964263ad6d.png" width="700">
 
 
   *  Executed Jenkins Pipeline
